@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="../dashboard/index.php">
                 <i class="fas fa-hospital"></i> Hospital System
@@ -40,11 +40,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../modules/patients/Patient.php">
                             <i class="fas fa-user-injured"></i> Patients
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../logout.php">
-                            <i class="fas fa-sign-out-alt"></i> Logout
                         </a>
                     </li>
                 </ul>
