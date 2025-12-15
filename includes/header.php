@@ -1,55 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $pageTitle ?? 'Hospital Management System'; ?></title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Hospital Management System</title>
+    <link rel="stylesheet" href="./assets/css/headStyle.css">
+    <link rel="stylesheet" href="./assets/css/listStyle.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../dashboard/index.php">
-                <i class="fas fa-hospital"></i> Hospital System
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../dashboard/index.php">
-                            <i class="fas fa-home"></i> Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../modules/departments/Departments.php">
-                            <i class="fas fa-building"></i> Departments
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../modules/doctors/Doctor.php">
-                            <i class="fas fa-user-md"></i> Doctors
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../modules/patients/Patient.php">
-                            <i class="fas fa-user-injured"></i> Patients
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../logout.php">
-                            <i class="fas fa-sign-out-alt"></i> Logout
-                        </a>
-                    </li>
-                </ul>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h1><i class="fa-solid fa-house-medical-flag"></i>&nbsp;Unity Care</h1>
+            <p>Hospital Management</p>
+        </div>
+        <div class="sidebar-menu">
+            <div class="menu-section">
+                <div class="menu-section-title">Main</div>
+                <a href="index.php" class="icon-dashboard">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+            </div>
+
+            <div class="menu-section">
+                <div class="menu-section-title">Patients</div>
+                <a href="index.php" class="<?php echo (!isset($_GET['action']) || $_GET['action'] == 'index') ? 'active' : ''; ?>">
+                    <i class="fa-solid fa-hospital-user"></i>
+                    <span>All Patients</span>
+                </a>
+
+            </div>
+
+            <div class="menu-section">
+                <div class="menu-section-title">Doctors</div>
+                <a href="index.php" class="<?php echo (!isset($_GET['action']) || $_GET['action'] == 'index') ? 'active' : ''; ?>">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <span>All Doctors</span>
+                </a>
+
+            </div>
+
+            <div class="menu-section">
+                <div class="menu-section-title">Departments</div>
+                <a href="index.php" class="<?php echo (!isset($_GET['action']) || $_GET['action'] == 'index') ? 'active' : ''; ?> ">
+                    <i class="fa-solid fa-hospital"></i>
+                    <span>All Departments</span>
+                </a>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="top-bar">
+            <h2>
+                <?php
+                if (!isset($_GET['action']) || $_GET['action'] == 'index') {
+                    echo 'Patients List';
+                } elseif ($_GET['action'] == 'create') {
+                    echo 'Add New Patient';
+                } elseif ($_GET['action'] == 'edit') {
+                    echo 'Edit Patient';
+                } else {
+                    echo 'Hospital Management';
+                }
+                ?>
+            </h2>
+            <div class="user-info">
+                <div class="user-avatar">A</div>
+                <span>Admin</span>
             </div>
         </div>
-    </nav>
-
-    <div class="container mt-4">
+        <div class="content">
