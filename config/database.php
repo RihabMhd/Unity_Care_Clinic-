@@ -1,15 +1,18 @@
 <?php
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'hospitalmanagement');
-define('DB_CHARSET', 'utf8mb4');
+class Database {
+    private $host = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $dbname = "hospitalmanagement";
+    public $conn;
 
-$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    public function connect() {
+        $this->conn = new mysqli($this->host, $this->username, $this->password, $this->dbname);
 
-if (!$conn) {
-    die("Erreur de connexion : " . mysqli_connect_error());
+        if ($this->conn->connect_error) {
+            die("Erreur de connexion : " . $this->conn->connect_error);
+        }
+        $this->conn->set_charset("utf8mb4");
+        return $this->conn;
+    }
 }
-
-
-mysqli_set_charset($conn, DB_CHARSET);

@@ -1,0 +1,118 @@
+/* Dark Mode DataTable Styling */
+#patientsTable {
+    border-collapse: collapse !important;
+    background-color: #336699;
+    color: #DAF7DC;
+}
+
+#patientsTable thead th {
+    background-color: #2F4858 !important;
+    color: #DAF7DC !important;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #86BBD8;
+}
+
+#patientsTable tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #86BBD8;
+    color: #DAF7DC;
+}
+
+#patientsTable tbody tr {
+    background-color: #336699;
+}
+
+#patientsTable tbody tr:hover {
+    background-color: #2F4858 !important;
+}
+
+/* DataTables Wrapper Dark Mode */
+.dataTables_wrapper {
+    color: #DAF7DC !important;
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter {
+    margin-bottom: 15px;
+    color: #DAF7DC;
+}
+
+.dataTables_wrapper .dataTables_length label,
+.dataTables_wrapper .dataTables_filter label {
+    color: #DAF7DC;
+}
+
+.dataTables_wrapper .dataTables_length select {
+    padding: 5px;
+    border: 1px solid #86BBD8;
+    border-radius: 4px;
+    margin: 0 5px;
+    background-color: #2F4858;
+    color: #DAF7DC;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    padding: 5px 10px;
+    border: 1px solid #86BBD8;
+    border-radius: 4px;
+    margin-left: 5px;
+    background-color: #2F4858;
+    color: #DAF7DC;
+}
+
+.dataTables_wrapper .dataTables_filter input:focus {
+    outline: none;
+    border-color: #9EE493;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 5px 10px;
+    margin: 0 2px;
+    border: 1px solid #86BBD8;
+    border-radius: 4px;
+    background: #2F4858 !important;
+    color: #DAF7DC !important;
+    cursor: pointer;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: #9EE493 !important;
+    color: #2F4858 !important;
+    border-color: #9EE493 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background: #9EE493 !important;
+    color: #2F4858 !important;
+    border-color: #9EE493 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+    background: #336699 !important;
+    color: #86BBD8 !important;
+    cursor: not-allowed;
+}
+
+.dataTables_wrapper .dataTables_info {
+    padding-top: 15px;
+    color: #86BBD8;
+}
+
+/* Sorting Icons */
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after {
+    color: #86BBD8 !important;
+}
+
+/* Processing message */
+.dataTables_processing {
+    background-color: #336699 !important;
+    color: #DAF7DC !important;
+    border: 1px solid #86BBD8 !important;
+}
