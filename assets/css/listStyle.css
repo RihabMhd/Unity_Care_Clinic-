@@ -1,10 +1,10 @@
-#patientsTable,#departmentsTable {
+#patientsTable,#departmentsTable,#doctorsTable {
     border-collapse: collapse !important;
     background-color: #336699;
     color: #DAF7DC;
 }
 
-#patientsTable thead th,#departmentsTable thead th {
+#patientsTable thead th,#departmentsTable thead th,#doctorsTable thead th{
     background-color: #2F4858 !important;
     color: #DAF7DC !important;
     padding: 12px;
@@ -14,18 +14,18 @@
 }
 
 
-#patientsTable tbody td,#departmentsTable tbody td {
+#patientsTable tbody td,#departmentsTable tbody td,#doctorsTable tbody td{
     padding: 10px 12px;
     border-bottom: 1px solid #86BBD8;
     color: #DAF7DC;
     text-align: center;
 }
 
-#patientsTable tbody tr,#departmentsTable tbody tr {
+#patientsTable tbody tr,#departmentsTable tbody tr ,#doctorsTable tbody tr{
     background-color: #336699;
 }
 
-#patientsTable tbody tr:hover,#departmentsTable tbody tr:hover {
+#patientsTable tbody tr:hover,#departmentsTable tbody tr:hover,#doctorsTable tbody tr:hover{
     background-color: #2F4858 !important;
 }
 
